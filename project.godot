@@ -9,7 +9,7 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Sprite2D",
+"base": "Node2D",
 "class": &"Card",
 "language": &"GDScript",
 "path": "res://scenes/scripts/card.gd"

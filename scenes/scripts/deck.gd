@@ -2,16 +2,10 @@ extends Node2D
 
 @onready var card = preload("res://scenes/card.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	create_deck()
 
-
 func create_deck():
-	
-	print('creating deck')
-	
 	for colour in Card.Colours.values():
 		for type in Card.Types.values():
 			if type == Card.Types.NUMBER:
@@ -22,9 +16,7 @@ func create_deck():
 				for i in 2:
 					self.add_child(create_card(colour, type, 0))
 
-
 func create_card(colour, type, number):
-	
 	var new_card: Card = card.instantiate()
 	
 	new_card.colour = colour
