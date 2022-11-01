@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://d07d45rmjdd7m"]
+
+[ext_resource type="Script" path="res://scenes/scripts/lobby.gd" id="1_6l0px"]
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_6l0px")
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Host" type="Button" parent="Options"]
+layout_mode = 2
+offset_right = 44.0
+offset_bottom = 31.0
+text = "Host"
+
+[node name="Join" type="Button" parent="Options"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 44.0
+offset_bottom = 66.0
+text = "Join
+"
+
+[connection signal="pressed" from="Options/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Options/Join" to="." method="_on_join_pressed"]

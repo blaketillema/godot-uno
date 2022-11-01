@@ -7,5 +7,4 @@ script = ExtResource("1_plsvy")
 
 [node name="Hand" type="Node2D" parent="."]
 
-[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_entered_tree" from="Hand" to="." method="_on_hand_child_entered_tree"]

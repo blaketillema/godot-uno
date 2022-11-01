@@ -6,7 +6,7 @@ extends Node2D
 
 func _ready():
 	for player in players.get_children():
-		player.connect('player_played_card', play_card)
+		player.connect('played_card', play_card)
 		for x in 7:
 			var card = deck.get_child(randi() % deck.get_child_count())
 			player.draw_card(card)

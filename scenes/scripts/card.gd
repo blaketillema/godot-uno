@@ -3,7 +3,7 @@ class_name Card
 
 enum Colours {GREEN, YELLOW, PURPLE, RED}
 enum Types {NUMBER, SKIP, REVERSE, DRAW, WILD}
-signal card_played(card: Card)
+signal card_selected(card: Card)
 
 @export var colour: Colours
 @export var type: Types
@@ -31,7 +31,7 @@ func set_face():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("play_card"):
-		card_played.emit(self)
+		card_selected.emit(self)
 
 func _on_area_2d_mouse_entered():
 	face.position.y -= 15

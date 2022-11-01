@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="1"
-run/main_scene="res://scenes/manager.tscn"
+run/main_scene="res://scenes/lobby.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
