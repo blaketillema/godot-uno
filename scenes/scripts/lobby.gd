@@ -9,23 +9,22 @@ func _on_host_pressed():
 	multiplayer_peer.create_server(port)
 	multiplayer.multiplayer_peer = multiplayer_peer
 	
-	multiplayer_peer.peer_connected.connect(
-		func(peer_id):
-			print("Player connected")
-			rpc('start_game')
+	multiplayer.peer_connected.connect(
+		func(id: int):
+			if multiplayer.get_peers().size() == 1:
+				rpc('start_game')
 	)
 
 func _on_join_pressed():
 	multiplayer_peer.create_client(address, port)
 	multiplayer.multiplayer_peer = multiplayer_peer
 	
-	multiplayer_peer.connection_succeeded.connect(
+	multiplayer.connected_to_server.connect(
 		func():
-			print("Connected successfully")
-			rpc('start_game')
+			print(str(multiplayer_peer.get_unique_id()) + ": Player Connected")
 	)
 
 @rpc(call_local)
 func start_game():
-	print("starting game")
+	print("Starting game")
 	get_tree().change_scene_to_file("res://scenes/manager.tscn")
